@@ -1,0 +1,24 @@
+[project]
+name = "experimental-vllm"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    { name = "David Ng", email = "david.ng.dev@gmail.com" },
+]
+dependencies = [
+    "huggingface-hub[cli]>=0.26.2",
+    "vllm>=0.6.3.post1",
+    "torch==2.2.2; sys_platform == 'macos'",
+    "torchvision==0.17.2; sys_platform == 'macos'",
+]
+requires-python = "==3.12.*"
+readme = "README.md"
+license = { text = "MIT" }
+
+
+[tool.pdm]
+distribution = false
+
+[tool.pdm.resolution.overrides]
+torch = "2.2.2; sys_platform == 'macos'"
+torchvision = "0.17.2; sys_platform == 'macos'"
